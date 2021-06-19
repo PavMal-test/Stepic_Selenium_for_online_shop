@@ -8,6 +8,12 @@ Created on Thu Jun 17 23:11:04 2021
 from selenium.webdriver.common.by import By
 
 
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.CSS_SELECTOR, '.basket-mini a.btn')
+    
+    
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
     BASKET_LINK = (By.CSS_SELECTOR, '.basket-mini a.btn')
@@ -29,6 +35,7 @@ class ProductPageLocators():
     PRODUCT_PRICE = (By.CSS_SELECTOR, "div.product_main > .price_color")
     ADDED_PRODUCT_NAME = (By.CSS_SELECTOR, '#messages > :nth-child(1) > div :nth-child(1)')
     ADDED_PRODUCT_PRICE = (By.CSS_SELECTOR, '#messages > :nth-child(3) > div :nth-child(1) > :nth-child(1)')
+    
     
 class BasketPageLocators():
     PRODUCT_TOTAL_PRICE = (By.CSS_SELECTOR, 'table  :nth-child(2) :nth-child(2)')

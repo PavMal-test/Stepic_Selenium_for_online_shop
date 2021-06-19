@@ -5,13 +5,13 @@ Created on Fri Jun 18 16:09:33 2021
 @author: user
 """
 
-from .main_page import MainPage
+from .base_page import BasePage
 from .locators import ProductPageLocators
 import math
 from selenium.common.exceptions import NoAlertPresentException
 import time
 
-class ProductPage(MainPage):                    #Т.к. у нас MainPage это не главная страница, а выходит общей частью всех страниц, наследум от неё
+class ProductPage(BasePage):                    
     def should_be_product_page(self):
         self.should_be_part_of_product_url()
         self.should_be_add_to_cart_button()
