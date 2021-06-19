@@ -39,3 +39,7 @@ class ProductPageLocators():
     
 class BasketPageLocators():
     PRODUCT_TOTAL_PRICE = (By.CSS_SELECTOR, 'table  :nth-child(2) :nth-child(2)')
+    #BASKET_TOTAL_TITLE = (By.CSS_SELECTOR, '.col-sm-4.col-sm-offset-8 a')
+    BASKET_PROCEED_BTN = (By.CSS_SELECTOR, '.col-sm-4.col-sm-offset-8 a')
+    BASKET_GOODS_IN_BASKET_TITLE = (By.CSS_SELECTOR, ".col-sm-6.h3")
+    BASKET_IS_EMPTY_MESSAGE = (By.CSS_SELECTOR, '#content_inner p')

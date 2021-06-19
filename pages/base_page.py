@@ -7,8 +7,9 @@ Created on Thu Jun 17 00:29:36 2021
 
 from selenium.common.exceptions import NoSuchElementException
 from .locators import BasePageLocators
-
-
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class BasePage():
     def __init__(self, browser, url, timeout=6):
@@ -37,3 +38,10 @@ class BasePage():
     def go_to_basket(self):
         basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         basket_link.click()
+        
+    def is_not_element_present(self, how, what, timeout=4):
+        try:
+            WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
+        except TimeoutException:
+            return True
+        return False
